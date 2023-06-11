@@ -81,9 +81,6 @@ class LangChainZulip:
             self.template = """Question: {question}
 
 Answer: Let's work this out in a step by step way to be sure we have the right answer."""
-        self.prompt = PromptTemplate(
-            template=self.template, input_variables=["question"]
-        )
         self.awesome_chatgpt_prompts = read_awesome_chatgpt_prompts()
 
         config: configparser.ConfigParser = configparser.ConfigParser()
@@ -107,10 +104,18 @@ Answer: Let's work this out in a step by step way to be sure we have the right a
             self.conversation_memory = ConversationSummaryBufferMemory(
                 llm=self.llm, max_token_limit=650
             )
+            self.prompt = None
+            if prompt_file_name is not None:
+                self.prompt = PromptTemplate(
+                    template=self.template, input_variables=["history", "input"]
+                )
             self.llm_chain = ConversationChain(
-                llm=self.llm, memory=self.conversation_memory
+                prompt=self.prompt, llm=self.llm, memory=self.conversation_memory
             )
         else:
+            self.prompt = PromptTemplate(
+                template=self.template, input_variables=["question"]
+            )
             self.llm_chain = LLMChain(prompt=self.prompt, llm=self.llm)
 
     def process_message(self, message: str) -> None:
