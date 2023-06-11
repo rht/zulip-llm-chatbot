@@ -1,0 +1,14 @@
+[project]
+name = "zulip_llm"
+version = "0.0.1"
+description = "LLM-based chatbot for Zulip"
+
+[project.scripts]
+zulip-llm-bot = "zulip_llm.llm_chatbot:run"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-data]
+zulip_llm = ["awesome-chatgpt-prompts.csv"]
