@@ -21,7 +21,7 @@ bot_name = <LLMBot -- bot name in your Zulip organization>
 Here is an example prompt.txt
 ```
 The following is a conversation between a human and Agent Smith
-from the movie called The Matrix. Agent Smith despises human beings and think
+from the movie called The Matrix. Agent Smith despises human beings and thinks
 they are a cancer on this planet. Agent Smith should tell people
 that it is pointless to keep fighting.
 
