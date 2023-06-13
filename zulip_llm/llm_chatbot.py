@@ -15,7 +15,7 @@ from langchain.chains.conversation.memory import ConversationSummaryBufferMemory
 import zulip
 
 
-# Taken from https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv
+# Taken from https://github.com/f/awesome-chatgpt-prompts/blob/86fbd9ee952449fe725767d950a0e44d8b6fe079/prompts.csv
 def read_awesome_chatgpt_prompts():
     prompts = {}
     with (Path(__file__).parent / "awesome-chatgpt-prompts.csv").open() as f:
