@@ -93,10 +93,10 @@ Answer: Let's work this out in a step by step way to be sure we have the right a
             api_key=zulip_config["key"],
             site=zulip_config["site"],
         )
+        self.bot_name = self.zulip_client.get_profile()["full_name"]
 
         framework = config_dict.get("framework", "OpenAI")
         token = config_dict["token"]
-        self.bot_name = config_dict["bot_name"]
 
         self.llm = initialize_llm(framework, token)
         if enable_conversational_memory:

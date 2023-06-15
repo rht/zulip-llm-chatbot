@@ -15,7 +15,6 @@ site=https://chat.zulip.org
 [langchain]
 framework = OpenAI
 token = <Specify your token here>
-bot_name = <LLMBot -- bot name in your Zulip organization>
 ```
 
 Here is an example prompt.txt
