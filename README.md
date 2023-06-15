@@ -1,5 +1,10 @@
 # Zulip LLM Chatbot
 
+To see it in action on chat.zulip.org: [#**llm testing>agent
+smith**](https://chat.zulip.org/#narrow/stream/479-llm-testing/topic/agent.20smith).
+Discussion at: [#**llm bot
+discussion**](https://chat.zulip.org/#narrow/stream/487-llm-bot-discussion).
+
 To setup the chatbot:
 1. `pip install git+https://github.com/rht/zulip-llm-chatbot`
 2. Run `zulip-llm-bot --config path/to/config.conf --prompt path/to/prompt.txt`
